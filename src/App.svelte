@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Country } from "./model/country";
+	import CountryTable from "./CountryTable.svelte";
 	// import {getCounries} from "./service/countryService";
 
 	const url =
@@ -19,16 +20,7 @@
 	{#await getCounries2()}
 		<p>...waiting</p>
 	{:then result}
-		<table>
-			<tr>
-				<th>Country</th><th>Population</th>
-			</tr>
-			{#each result as { name, population }}
-				<tr>
-					<td>{name}</td><td>{population}</td>
-				</tr>
-			{/each}
-		</table>
+		<CountryTable countries={result} />
 	{:catch error}
 		<p style="color: red">{error.message}</p>
 	{/await}
@@ -37,9 +29,13 @@
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+		/* padding: 1em; */
+		/* max-width:fit-content; */
+		margin: auto;
+		/* padding-left:40px;
+		padding-right: 40px; */
+		background-color: ghostwhite;
+
 	}
 
 	h1 {
@@ -49,9 +45,9 @@
 		font-weight: 100;
 	}
 
-	@media (min-width: 640px) {
+	/* @media (min-width: 640px) {
 		main {
 			max-width: none;
 		}
-	}
+	} */
 </style>
