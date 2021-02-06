@@ -1,8 +1,9 @@
 <script lang="ts">
-	import type {Country} from "./model/country";
+	import type { Country } from "./model/country";
 	// import {getCounries} from "./service/countryService";
 
-	const url = "https://restcountries.eu/rest/v2/all?fields=name;capital;currencies;languages;flag;population;alpha3Code;alpha2Code";
+	const url =
+		"https://restcountries.eu/rest/v2/all?fields=name;capital;currencies;languages;flag;population;alpha3Code;alpha2Code";
 
 	const getCounries2 = async (): Promise<Country[]> => {
 		const response = await fetch(url);
@@ -14,15 +15,23 @@
 </script>
 
 <main>
-	<h1>{name} Countries </h1>
+	<h1>{name} Countries</h1>
 	{#await getCounries2()}
 		<p>...waiting</p>
 	{:then result}
-		<div>{JSON.stringify(result, null, 2)}</div>
+		<table>
+			<tr>
+				<th>Country</th><th>Population</th>
+			</tr>
+			{#each result as { name, population }}
+				<tr>
+					<td>{name}</td><td>{population}</td>
+				</tr>
+			{/each}
+		</table>
 	{:catch error}
 		<p style="color: red">{error.message}</p>
 	{/await}
-
 </main>
 
 <style>
