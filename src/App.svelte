@@ -16,7 +16,7 @@
 </script>
 
 <main>
-	<h1>{name} Countries</h1>
+	<h1>{name}</h1>
 	{#await getCounries2()}
 		<p>...waiting</p>
 	{:then result}
@@ -32,6 +32,7 @@
 		/* padding: 1em; */
 		/* max-width:fit-content; */
 		margin: auto;
+		margin-top: 0px;
 		/* padding-left:40px;
 		padding-right: 40px; */
 		background-color: ghostwhite;
@@ -41,8 +42,10 @@
 	h1 {
 		color: #ff3e00;
 		text-transform: uppercase;
-		font-size: 4em;
+		font-size: 3em;
 		font-weight: 100;
+		margin-block-start: 0px;
+		margin-block-end: 10px;
 	}
 
 	/* @media (min-width: 640px) {
