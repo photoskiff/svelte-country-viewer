@@ -60,10 +60,11 @@
 
     export let filtered: Country[] = [];
     $: filterWord = rotateFilterCriteria(filterEntered);
-    $: sorted = order ?  countries?.sort((a, b) => order === "asc" ? a.population - b.population : b.population - a.population) : countries;
-    $: filtered = sorted.filter((c) => filterCriteria.func(filterWord, c));
+    $: sorted = order ?  [...countries].sort((a, b) => order === "asc" ? a.population - b.population : b.population - a.population) 
+        : countries;
+    $: filtered = sorted.filter(c => filterCriteria.func(filterWord, c));
 
-    const handleKeyPress = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === "Escape") {
             filterEntered = "";
         }
@@ -78,7 +79,7 @@
         bind:value={filterEntered}
         bind:this={box}
         placeholder={filterCriteria.prompt}
-        on:keydown={handleKeyPress}
+        on:keydown={handleKeyDown}
     />
     <select bind:value={selectedField}>
         {#each filterFields as f}
