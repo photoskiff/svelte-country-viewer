@@ -86,9 +86,9 @@
             <option value={f}>{f}</option>
         {/each}
     </select>
-    <button on:click="{() => order = 'asc'}" disabled={order === 'asc'}>asc</button>
-    <button on:click="{() => order = undefined}" disabled={!order}>reset</button>
-    <button on:click="{() => order = 'desc'}" disabled={order === 'desc'}>desc</button>
+    <button on:click={() => order = 'asc'} disabled={order === 'asc'}>asc</button>
+    <button on:click={() => order = undefined} disabled={!order}>reset</button>
+    <button on:click={() => order = 'desc'} disabled={order === 'desc'}>desc</button>
 </div>
 
 <style>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Country } from "./model/country";
 	import CountryTable from "./CountryTable.svelte";
+	import Modal from "./Modal.svelte";
 	// import {getCounries} from "./service/countryService";
 
 	const url =
@@ -20,7 +21,9 @@
 	{#await getCounries2()}
 		<p>...waiting</p>
 	{:then result}
+	<Modal>
 		<CountryTable countries={result} />
+	</Modal>
 	{:catch error}
 		<p style="color: red">{error.message}</p>
 	{/await}
