@@ -1,6 +1,12 @@
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
+# counry viewer in svelte.js
+this my evaluation project that I wrote in svelte to the same requirements as for one in React here
+https://github.com/photoskiff/interview_st 
+I think it might be quite interesting to compare these two frameorks by looking at the projects side-by-side
+
+---
 
 # svelte app
 
