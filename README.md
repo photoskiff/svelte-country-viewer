@@ -2,7 +2,7 @@
 
 ---
 # counry viewer in svelte.js
-this my evaluation project that I wrote in svelte to the same requirements as for one in React here
+this is my evaluation project that I wrote in svelte to the same requirements as for one in React here
 https://github.com/photoskiff/interview_st 
 I think it might be quite interesting to compare these two frameorks by looking at their source code side-by-side
 
