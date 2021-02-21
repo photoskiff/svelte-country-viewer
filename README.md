@@ -9,6 +9,7 @@ I think it might be quite interesting to compare these two frameorks by looking 
 # docker image
 docker build -t svelte-country-viewer .
 docker run --rm -d  -p 5000:5000/tcp svelte-country-viewer:latest svelte1
+docker run -d  -p 5000:5000/tcp svelte-country-viewer:latest svelte1
 ---
 
 # svelte app
