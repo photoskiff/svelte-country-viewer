@@ -6,6 +6,9 @@ this is my evaluation project that I wrote in svelte to the same requirements as
 https://github.com/photoskiff/assessments-template
 I think it might be quite interesting to compare these two frameorks by looking at their source code side-by-side
 
+# docker image
+docker build -t svelte-country-viewer .
+docker run --rm -d  -p 5000:5000/tcp svelte-country-viewer:latest svelte1
 ---
 
 # svelte app
